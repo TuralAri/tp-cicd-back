@@ -5,6 +5,8 @@
 # They are provided by a third-party and are governed by
 # separate terms of service, privacy policy, and support
 # documentation.
+env:
+  imagename: turalari/tp-back-cicd:${{ github.ref_name }}
 
 name: Java CI with Maven
 
@@ -29,3 +31,6 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+      #Mon rajout d'étape
+    - name: Build Docker image
+      run: docker build -t ${{ env.imagename }} .
