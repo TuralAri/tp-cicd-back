@@ -14,8 +14,10 @@ name: Java CI with Maven
 on:
   push:
     branches: [ "*" ]
+    tags: ["*"]
   pull_request:
     branches: [ "*" ]
+    tags: ["*"]
 
 jobs:
   build:
