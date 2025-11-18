@@ -44,7 +44,7 @@ jobs:
       run: docker push ${{ env.imagename }}
   
   deploy:
-    if: startsWith(github.ref, 'refs/tags/')
+    if: github.ref_type == ’tag’
     runs-on: ubuntu-latest
 
     steps:
