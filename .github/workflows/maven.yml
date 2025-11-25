@@ -51,6 +51,6 @@ jobs:
     needs : build
     steps:
       - name: Deploy to render
-        run: curl -X POST "$RENDER_DEPLOY_HOOK"
+        run: curl -X POST "${{ secrets.DEPLOY_HOOK }}"
 
         
